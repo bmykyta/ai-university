@@ -1,5 +1,5 @@
 <div align="center">
-Artificial Intelligence: A Modern Approach<img src="images/aima_logo.png" />
+<img src="images/aima_logo.png" alt="Artificial Intelligence: A Modern Approach" />
 </div>
 
 ## Python 3.8
