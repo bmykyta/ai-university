@@ -2,8 +2,11 @@ from modules.agents import *
 
 
 class Food(Thing):
-    pass
+    def __str__(self):
+        return __class__.__name__
 
 
 class Water(Thing):
-    pass
+    def __str__(self):
+        return __class__.__name__
+
