@@ -3,6 +3,11 @@ from typing import List
 
 
 class Park2D(GraphicEnvironment):
+    acceptable_things = (
+        Food,
+        Water,
+    )
+
     def percept(self, agent: Agent) -> List[Thing]:
         """ Returns a list of things that are in our agent's location. """
         things = self.list_things_at(agent.location)
@@ -50,7 +55,7 @@ class Park2D(GraphicEnvironment):
     def is_done(self):
         """ By default, we're done when we can't find a live agent, but to prevent killing out cute dog, we will stop
         before itself - when there is no more food or water """
-        no_edibles = not any(isinstance(thing, Food) or isinstance(thing, Water) for thing in self.things)
+        no_edibles = not any(isinstance(thing, self.acceptable_things) for thing in self.things)
         dead_agents = not any(agent.is_alive() for agent in self.agents)
 
         return dead_agents or no_edibles
